@@ -8,7 +8,8 @@ let campoDescripcion = document.querySelector("#descripcion");
 let campoCantidad = document.querySelector("#cantidad");
 let campoURL = document.querySelector("#url");
 let formularioProducto = document.querySelector("#formProducto");
-let listaProductos = [];
+//si hay algo en localstorage quiero guardarlo en el arreglo sino quiero que sea un arreglo vacio 
+let listaProductos = JSON.parse(localStorage.getItem("arreglosProductosKey")) || [];
 
 // asociar un evento a un elemtento del hyml desde js
 // ddEventListener  : manejador de evento 2 parametros (nombre evento mas funcion asociada)
@@ -38,6 +39,8 @@ function crearProducto(){
     console.log(listaProductos);
     //limpiar el formulario
     limpiarFormulario();
+    //guardar el arreglo de productos dentro de localstorage
+    guardarLocalStorage();
 }
 
 function limpiarFormulario(){
@@ -49,5 +52,9 @@ function limpiarFormulario(){
     campoDescripcion.className = "form-control";
     campoCantidad.className = "form-control";
     campoURL.className = "form-control";
+
+}
+function guardarLocalStorage(){
+    localStorage.setItem("arreglosProductosKey", JSON.stringify(listaProductos) )
 
 }
