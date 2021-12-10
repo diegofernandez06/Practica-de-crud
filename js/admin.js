@@ -41,6 +41,8 @@ function crearProducto(){
     limpiarFormulario();
     //guardar el arreglo de productos dentro de localstorage
     guardarLocalStorage();
+    // mostrar un cartel al usuario
+ 
 }
 
 function limpiarFormulario(){
@@ -55,6 +57,6 @@ function limpiarFormulario(){
 
 }
 function guardarLocalStorage(){
-    localStorage.setItem("arreglosProductosKey", JSON.stringify(listaProductos) )
+    localStorage.setItem("arreglosProductosKey", JSON.stringify(listaProductos))
 
 }
