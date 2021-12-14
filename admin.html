@@ -9,7 +9,7 @@
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="js/bootstrap.min.js">
-   
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Practica de CRUD</title>
 </head>
 <body>
@@ -75,92 +75,19 @@
           <button class="btn btn-secondary my-2" type="submit">Cargar datos de prueba</button>
           <table class="table my-5">
             <thead>
-              <tr>
-                <th scope="col">Cod.</th>
-                <th scope="col">Producto</th>
-                <th scope="col">Descripcion</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">URL</th>
-                <th scope="col">Acciones</th>
-              </tr>
+              <tbody>
+                <tr>
+                  <th scope="col">Cod.</th>
+                  <th scope="col">Producto</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">URL</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </tbody>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">-001</th>
-                <td>MacBook Pro-001</td>
-                <td>Some quick example text to build on the card title and make up
-                  the bulk of the card's content.</td>
-                <td>1</td>
-                <td>https://example-example-com/example</td>
-                <td class="text-center"><button class="btn btn-warning" type="submit">Editar</button>
-                  <button class="btn btn-danger" type="submit">Borrar</button></td>
-              </tr>
-  
-              <tr>
-                <th scope="row">-002</th>
-                <td>MacBook Pro-002</td>
-                <td>Some quick example text to build on the card title and make up
-                  the bulk of the card's content.</td>
-                <td>1</td>
-                <td>https://example-example-com/example</td>
-                <td class="text-center"><button class="btn btn-warning" type="submit">Editar</button>
-                  <button class="btn btn-danger" type="submit">Borrar</button></td>
-              </tr>
-  
-              <tr>
-                <th scope="row">-003</th>
-                <td>MacBook Pro-003</td>
-                <td>Some quick example text to build on the card title and make up
-                  the bulk of the card's content.</td>
-                <td>1</td>
-                <td>https://example-example-com/example</td>
-                <td class="text-center"><button class="btn btn-warning" type="submit">Editar</button>
-                  <button class="btn btn-danger" type="submit">Borrar</button></td>
-              </tr>
-  
-              <tr>
-                <th scope="row">-004</th>
-                <td>MacBook Pro-004</td>
-                <td>Some quick example text to build on the card title and make up
-                  the bulk of the card's content.</td>
-                <td>1</td>
-                <td>https://example-example-com/example</td>
-                <td class="text-center"><button class="btn btn-warning" type="submit">Editar</button>
-                  <button class="btn btn-danger" type="submit">Borrar</button></td>
-              </tr>
-  
-              <tr>
-                <th scope="row">MBA-001</th>
-                <td>MacBook Air-001</td>
-                <td>Some quick example text to build on the card title and make up
-                  the bulk of the card's content.</td>
-                <td>1</td>
-                <td>https://example-example-com/example</td>
-                <td class="text-center"><button class="btn btn-warning" type="submit">Editar</button>
-                  <button class="btn btn-danger" type="submit">Borrar</button></td>
-              </tr>
-  
-              <tr>
-                <th scope="row">MBA-002</th>
-                <td>MacBook Air-002</td>
-                <td>Some quick example text to build on the card title and make up
-                  the bulk of the card's content.</td>
-                <td>1</td>
-                <td>https://example-example-com/example</td>
-                <td class="text-center"><button class="btn btn-warning" type="submit">Editar</button>
-                  <button class="btn btn-danger" type="submit">Borrar</button></td>
-              </tr>
-  
-              <tr>
-                <th scope="row">MBA-003</th>
-                <td>MacBook Air-003</td>
-                <td>Some quick example text to build on the card title and make up
-                  the bulk of the card's content.</td>
-                <td>1</td>
-                <td>https://example-example-com/example</td>
-                <td class="text-center"><button class="btn btn-warning" type="submit">Editar</button>
-                  <button class="btn btn-danger" type="submit">Borrar</button></td>
-              </tr>            
+            <tbody id="tablaProductos">
+                  
             </tbody>
           </table>
         </section>
