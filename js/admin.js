@@ -16,6 +16,7 @@ let formularioProducto = document.querySelector("#formProducto");
 //si hay algo en localstorage quiero guardarlo en el arreglo sino quiero que sea un arreglo vacio
 let listaProductos =
   JSON.parse(localStorage.getItem("arreglosProductosKey")) || [];
+let productoExistente = false; // si productoExistente es = false se quiere crear producto, si es true entonces quiero modificar un producto existe
 
 // asociar un evento a un elemtento del hyml desde js
 // ddEventListener  : manejador de evento 2 parametros (nombre evento mas funcion asociada)
@@ -51,8 +52,13 @@ function guardarProducto(e) {
       campoURL
     )
   ) {
-    // crear producto
-    crearProducto();
+    if (productoExistente == false) {
+      // crear producto
+      crearProducto();
+    } else {
+      //modifica un producto
+      modificarProducto();
+    }
   }
 }
 
@@ -106,16 +112,59 @@ function crearFila(producto) {
     <td>${producto.descripcion}</td>
     <td>${producto.cantidad}</td>
     <td>${producto.url}</td>
-    <td class="text-center"><button class="btn btn-warning" type="submit">Editar</button>
-      <button class="btn btn-danger" type="submit">Borrar</button></td>
+    <td class="text-center">
+    <button class="btn btn-warning" onclick="prepararEdicionProducto('${producto.codigo}')">Editar</button>
+      <button class="btn btn-danger">Borrar</button></td>
   </tr>`;
 }
 
-function cargaInicial() {
+function cargaInicial(){
   if (listaProductos.length > 0) {
     // crear las final
     listaProductos.forEach((itemProducto) => {
       crearFila(itemProducto);
     });
   }
+}
+window.prepararEdicionProducto = function (codigo) {
+  console.log("desde editar");
+  console.log(codigo);
+  //  buscar el producto en el arreg lo
+  let productoBuscado = listaProductos.find((itemProducto) => {
+    return itemProducto.codigo == codigo;
+  });
+  console.log(productoBuscado);
+  //mostrar el producto en el fomulario
+  campoCodigo.value = productoBuscado.codigo;
+  campoProducto.value = productoBuscado.producto;
+  campoDescripcion.value = productoBuscado.descripcion;
+  campoCantidad.value = productoBuscado.cantidad;
+  campoURL.value = productoBuscado.url;
+  //cambio mi variable productoExistente
+  productoExistente = true;
+};
+
+function modificarProducto() {
+  console.log("desde modificar producto");
+  //encontrar la posicion del elemento que quiero modificar dentro del arreglo del productos
+  let posicionObjetoBuscado = listaProductos.findIndex((itemProducto) => {
+    return itemProducto.codigo == campoCodigo.value});
+    console.log(posicionObjetoBuscado);
+  //modificar los valores dentro del arreglo
+  listaProductos[posicionObjetoBuscado].producto =campoCodigo.value;
+  listaProductos[posicionObjetoBuscado].producto = campoProducto.value;
+  listaProductos[posicionObjetoBuscado].descripcion = campoDescripcion.value;
+  listaProductos[posicionObjetoBuscado].cantidad = campoCantidad.value;
+  listaProductos[posicionObjetoBuscado].url = campoURL.value;
+
+  //actualizar el local storage
+  guardarLocalStorage();
+  //atualizar la tabla tambien
+  borrarTabla();
+  cargaInicial();
+}
+
+function borrarTabla(){
+  let tbodyProductos = document.querySelector("#tablaProductos");
+  tbodyProductos.innerHTML="";
 }
