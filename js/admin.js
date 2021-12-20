@@ -157,7 +157,7 @@ function modificarProducto() {
     return itemProducto.codigo == campoCodigo.value});
     console.log(posicionObjetoBuscado);
   //modificar los valores dentro del arreglo
-  listaProductos[posicionObjetoBuscado].producto =campoCodigo.value;
+  listaProductos[posicionObjetoBuscado].codigo = campoCodigo.value;
   listaProductos[posicionObjetoBuscado].producto = campoProducto.value;
   listaProductos[posicionObjetoBuscado].descripcion = campoDescripcion.value;
   listaProductos[posicionObjetoBuscado].cantidad = campoCantidad.value;
