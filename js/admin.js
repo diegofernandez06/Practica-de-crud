@@ -17,6 +17,7 @@ let formularioProducto = document.querySelector("#formProducto");
 let listaProductos =
   JSON.parse(localStorage.getItem("arreglosProductosKey")) || [];
 let productoExistente = false; // si productoExistente es = false se quiere crear producto, si es true entonces quiero modificar un producto existe
+let btnNuevo = document.querySelector("#btnNuevo")
 
 // asociar un evento a un elemtento del hyml desde js
 // ddEventListener  : manejador de evento 2 parametros (nombre evento mas funcion asociada)
@@ -36,6 +37,7 @@ campoURL.addEventListener("blur", () => {
   validarURL(campoURL);
 });
 formularioProducto.addEventListener("submit", guardarProducto);
+btnNuevo.addEventListener("click", limpiarFormulario);
 
 //llamo a carga inicial
 cargaInicial();
@@ -99,6 +101,9 @@ function limpiarFormulario() {
   campoDescripcion.className = "form-control";
   campoCantidad.className = "form-control";
   campoURL.className = "form-control";
+  // resetear la variable booleana
+  productoExistente=false;
+  
 }
 function guardarLocalStorage() {
   localStorage.setItem("arreglosProductosKey", JSON.stringify(listaProductos));
@@ -162,6 +167,14 @@ function modificarProducto() {
   //atualizar la tabla tambien
   borrarTabla();
   cargaInicial();
+  // mostrar cartel al usuario
+  Swal.fire(
+    "Producto modificadfo",
+    "Su producto fue correctamente actualizado",
+    "success"
+  );
+  // limpiar formulario
+  limpiarFormulario()
 }
 
 function borrarTabla(){
