@@ -119,7 +119,8 @@ function crearFila(producto) {
     <td>${producto.url}</td>
     <td class="text-center">
     <button class="btn btn-warning" onclick="prepararEdicionProducto('${producto.codigo}')">Editar</button>
-      <button class="btn btn-danger">Borrar</button></td>
+    <button class="btn btn-danger" onclick="borrarProducto('${producto.codigo}')">Borrar</button>
+    </td>
   </tr>`;
 }
 
@@ -180,4 +181,23 @@ function modificarProducto() {
 function borrarTabla(){
   let tbodyProductos = document.querySelector("#tablaProductos");
   tbodyProductos.innerHTML="";
+}
+
+window.borrarProducto = function (codigo){
+  //console.log(codigo);
+  //buscar posicion del elemento en ela rreglo y borrarlo
+  let arregloNuevo = listaProductos.filter((item)=>{return item.codigo != codigo});
+  //console.log(arregloNuevo);
+  //actualizar el arreglo original y el localstorage
+  listaProductos = arregloNuevo;
+  guardarLocalStorage();
+  //actualizar la tabla
+  borrarTabla();
+  cargaInicial();
+  //mostrar calrtel al usuario
+  Swal.fire(
+    "Producto meliminado",
+    "Su producto fue correctamente eliminado del sistema",
+    "success"
+  );
 }
