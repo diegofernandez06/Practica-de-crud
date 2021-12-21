@@ -1,203 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="descriptions" content="practica de BOM" />
-    <meta name="author" content="Diego" />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="js/bootstrap.min.js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- agregar las 3 etiquetas metas -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <title>Practica de CRUD</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">CRUD</a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.html"
-                    >Inicio</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="admin.html">Administrar</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <main class="container my-5">
-        <section class="my-5 ">
-          <h1 class="display-3 text-center">Catalogo de productos</h1>
-          <hr />
-        </section>
-        <section class="container">
-          <article
-            class="
-              row
-              d-flex
-              justify-content-center
-            "
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">CRUD</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <div
-              class="card col-lg-3 col-md-4 col-sm-12 py-2 m-3"
-              style="width: 18rem"
-            >
-              <img
-                src=""
-                class="card-img-top"
-                alt="mbp-pro"
-              />
-              <div class="card-body">
-                <h5 class="card-title">MacbookPro-001</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <p class="card-text">COD. (MBP001)</p>
-                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-              </div>
-            </div>
-  
-            <div
-              class="card col-lg-3 col-md-4 col-sm-12 py-2 m-3"
-              style="width: 18rem"
-            >
-              <img
-                src=""
-                class="card-img-top"
-                alt="mbp-pro"
-              />
-              <div class="card-body">
-                <h5 class="card-title">MacbookPro-002</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <p class="card-text">COD. (MBP002)</p>
-                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-              </div>
-            </div>
-  
-            <div
-              class="card col-lg-3 col-md-4 col-sm-12 py-2 m-3"
-              style="width: 18rem"
-            >
-              <img
-                src=""
-                class="card-img-top"
-                alt="mbp-pro"
-              />
-              <div class="card-body">
-                <h5 class="card-title">MacbookPro-003</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <p class="card-text">COD. (MBP003)</p>
-                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-              </div>
-            </div>
-  
-            <div
-              class="card col-lg-3 col-md-4 col-sm-12 py-2 m-3"
-              style="width: 18rem"
-            >
-              <img
-                src=""
-                class="card-img-top"
-                alt="mbp-pro"
-              />
-              <div class="card-body">
-                <h5 class="card-title">MacbookPro-004</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <p class="card-text">COD. (MBP004)</p>
-                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-              </div>
-            </div>
-  
-            <div
-              class="card col-lg-3 col-md-4 col-sm-12 py-2 m-3"
-              style="width: 18rem"
-            >
-              <img
-                src=""
-                class="card-img-top"
-                alt="mbp-pro"
-              />
-              <div class="card-body">
-                <h5 class="card-title">MacbookAir-001</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <p class="card-text">COD. (MBA001)</p>
-                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-              </div>
-            </div>
-  
-            <div
-              class="card col-lg-3 col-md-4 col-sm-12 py-2 m-3"
-              style="width: 18rem"
-            >
-              <img
-                src=""
-                class="card-img-top py-5 my-2"
-                alt="mbp-pro"
-              />
-              <div class="card-body">
-                <h5 class="card-title">MacbookAir-002</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <p class="card-text">COD. (MBA002)</p>
-                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-              </div>
-            </div>
-  
-            <div
-              class="card col-lg-3 col-md-4 col-sm-12 py-2 m-3"
-              style="width: 18rem"
-            >
-              <img
-                src=""
-                class="card-img-top"
-                alt="mbp-pro"
-              />
-              <div class="card-body">
-                <h5 class="card-title">MacbookAir-003</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <p class="card-text">COD. (MBA003)</p>
-                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-              </div>
-            </div>
-          </article>
-        </section>
-      </main>
-    
-    
-</body>
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin.html">Administrar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="my-5">
+        <h1 class="display-3 text-center">Catalogo Productos</h1>
+        <hr>
+        <article class="row" id="grilla">
+        </article>
+      </section>
+    </main>
+    <footer></footer>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
