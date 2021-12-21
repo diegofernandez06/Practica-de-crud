@@ -5,7 +5,7 @@
 *Agregar una descricion breve del proyecto*
 
 ## ver demo 
-[https://trello.com/c/cFvY0VxX/99-agenda-01-12](https://trello.com/c/cFvY0VxX/99-agenda-01-12)
+[repo de CRUD](https://dreamy-babbage-359285.netlify.app)
 
 ## Librerias utilizadas 🛠️
 - [bootstrap](https://blog.getbootstrap.com/)
